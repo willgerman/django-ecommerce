@@ -1,0 +1,83 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Home | FNTN
+{% endblock %}
+
+{% block home_banner %}
+<div class="home_banner"
+     grid=""
+     container="main">
+    <div container="main">
+        <div flex="col">
+            <p class="home_banner_company">Fountain Mugs LLC</p>
+            <h1 class="home_banner_heading capitalize">
+                <span style="color: var(--primary-400)">Specialty mugs</span> for every occasion
+            </h1>
+        </div>
+        <p class="home_banner_subheading">
+            High-quality, customizable mugs designed to suit every occasion. From unique designs to personalized
+            messages,
+            we help you celebrate life's little moments with a mug that's as special as the occasion itself!
+        </p>
+        <a href="#main-content"
+           class="home_banner_link"
+           flex="row">
+            Shop Now
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+        <p class="home_banner_credit">Image Credit: Amy Parkes</p>
+    </div>
+    <img src="{% static 'assets/images/amy-parkes.png' %}"
+         alt="Photography by Amy Parkes. Sourced via Unsplash."
+         class="home_banner_image">
+</div>
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+    {% if categories %}
+    {% for category in categories %}
+    <section class="home_section"
+             grid="">
+        <h2 class="home_section_title">{{ category.name }}</h2>
+        <p class="home_section_description">{{ category.description }}</p>
+
+        {% if category.thumbnail %}
+        <img src="{{ category.thumbnail.url }}"
+             alt=""
+             class="home_section_image">
+        {% endif %}
+
+        <a href="{% url 'products:listings' slug=category.slug %}"
+           class="home_section_link"
+           flex="row">
+            Shop {{ category.name }}
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+    </section>
+    {% endfor %}
+    {% else %}
+    <p>No categories found.</p>
+    {% endif %}
+</main>
+{% endblock %}

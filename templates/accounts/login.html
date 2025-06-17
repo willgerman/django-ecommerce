@@ -1,0 +1,173 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Member Sign In | FNTN
+{% endblock %}
+
+{% block inline_css %}
+<style>
+    input.error {
+        border: 1px solid red;
+    }
+
+    .form_error_message {
+        color: red;
+        font-size: 0.875rem;
+        margin-top: 5px;
+    }
+
+    #signInButton:disabled {
+        background-color: var(--neutral-200);
+        color: var(--neutral-600);
+        cursor: not-allowed;
+        border-color: var(--neutral-200);
+    }
+
+    input.valid {
+        border: 1px solid green;
+    }
+
+    .login_password_reset_link {
+        width: max-content;
+        color: var(--primary-400);
+        margin-left: auto;
+        font-weight: var(--font-weight-regular);
+        margin-bottom: var(--margin-block-default);
+    }
+
+    .account_redirect {
+        width: max-content;
+        margin-inline: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .account_redirect>a {
+        color: var(--primary-400);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+    <h1 class="heading">Member Sign In</h1>
+    <p class="subheading">Enter your account credentials below.</p>
+
+    <form action=""
+          method="post"
+          class="form"
+          flex="col">
+
+        {% csrf_token %}
+
+        {% if messages %}
+        <ul class="form_errors_list"
+            grid=""
+            role="list">
+            {% for message in messages %}
+            <li class="form_errors_item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p class="form_error_message">{{ message }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <label flex="col">
+            Email
+            <input type="email"
+                   name="email"
+                   required>
+        </label>
+
+        <label flex="col">
+            Password
+            <input type="password"
+                   name="password"
+                   required>
+            <a href="{% url 'otp_auth:send_otp' %}"
+               class="login_password_reset_link">
+                Forgot Password?
+            </a>
+        </label>
+
+        <button type="submit"
+                id="signInButton"
+                disabled>Sign In</button>
+
+    </form>
+</main>
+{% endblock %}
+
+{% block inline_js %}
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector(".form");
+        const emailInput = form.querySelector("input[name='email']");
+        const passwordInput = form.querySelector("input[name='password']");
+        const signInButton = document.getElementById("signInButton");
+
+        emailInput.addEventListener("blur", () => validateField(emailInput, validateEmail, "Please enter a valid email address."));
+        passwordInput.addEventListener("blur", () => validateField(passwordInput, value => value.trim() !== "", "Please enter your password."));
+
+        emailInput.addEventListener("input", toggleButtonState);
+        passwordInput.addEventListener("input", toggleButtonState);
+
+        form.addEventListener("submit", (event) => {
+            clearErrors();
+            let isValid = true;
+
+            if (!validateField(emailInput, validateEmail, "Please enter a valid email address.")) isValid = false;
+            if (!validateField(passwordInput, value => value.trim() !== "", "Please enter your password.")) isValid = false;
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+
+        function validateField(input, validationFn, errorMessage) {
+            const isValid = validationFn(input.value);
+            if (isValid) {
+                clearError(input);
+                input.classList.add("valid");
+            } else {
+                showError(input, errorMessage);
+                input.classList.remove("valid");
+            }
+            return isValid;
+        }
+
+        function toggleButtonState() {
+            signInButton.disabled = !validateEmail(emailInput.value) || passwordInput.value.trim() === "";
+        }
+
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function showError(input, message) {
+            clearError(input);
+
+            const errorItem = document.createElement("p");
+            errorItem.classList.add("form_error_message");
+            errorItem.textContent = message;
+
+            input.classList.add("error");
+            input.parentElement.appendChild(errorItem);
+        }
+
+        function clearError(input) {
+            input.classList.remove("error");
+
+            const errorMessage = input.parentElement.querySelector(".form_error_message");
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+        }
+    });
+</script>
+{% endblock %}

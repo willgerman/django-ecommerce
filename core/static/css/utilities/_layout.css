@@ -1,0 +1,119 @@
+/* ------------------------------- */
+/* ------------------------------- */
+/* ------------------------------- */
+
+/* ======================== */
+/* #region utilities/layout */
+/* ======================== */
+
+/* ------------------------------- */
+
+/* ------------ */
+/* #region grid */
+/* ------------ */
+
+:where([grid], [grid*=""]) {
+    --_gap: var(--gap-default, 1.5em);
+    display: grid;
+    grid-gap: var(--_gap);
+}
+
+:where([grid*="auto-fit"]) {
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+:where([grid*="auto-fill"]) {
+    grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+}
+
+:where([grid*="items-center"]) {
+    place-items: center;
+}
+
+:where([grid*="content-center"]) {
+    place-content: center;
+}
+
+/* ------------ */
+/* #endregion   */
+/* ------------ */
+
+/* ------------------------------- */
+
+/* ------------ */
+/* #region flex */
+/* ------------ */
+
+:where([flex], [flex*=""]) {
+    --_gap: var(--gap-default, 1.5em);
+    --_col-gap: var(--_gap);
+    --_row-gap: calc(var(--_gap) / 2);
+
+    display: flex;
+    column-gap: var(--_col-gap);
+    row-gap: var(--_row-gap);
+}
+
+:where([flex*="col"]) {
+    flex-direction: column;
+}
+
+:where([flex*="row"]) {
+    flex-direction: row;
+}
+
+:where([flex*="space-around"]) {
+    justify-content: space-around;
+}
+
+:where([flex*="space-evenly"]) {
+    justify-content: space-evenly;
+}
+
+:where([flex*="space-between"]) {
+    justify-content: space-between;
+}
+
+:where([flex*="items-center"]) {
+    align-items: center;
+}
+
+:where([flex*="content-center"]) {
+    justify-content: center;
+}
+
+/* ------------ */
+/* #endregion   */
+/* ------------ */
+
+/* ------------------------------- */
+
+/* ------------ */
+/* #region flow */
+/* ------------ */
+
+:where([flow], [flow=""]) {
+    --_flow-gap: var(--gap-default, 1.5em);
+}
+
+:where([flow="vertical"] > :where(:not(:first-child))) {
+    margin-top: var(--_flow-gap);
+}
+
+:where([flow="horizontal"] > :where(:not(:first-child))) {
+    margin-left: var(--_flow-gap);
+}
+
+/* ------------ */
+/* #endregion   */
+/* ------------ */
+
+/* ------------------------------- */
+
+/* ======================== */
+/* #endregion               */
+/* ======================== */
+
+/* ------------------------------- */
+/* ------------------------------- */
+/* ------------------------------- */

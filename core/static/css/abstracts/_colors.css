@@ -1,0 +1,172 @@
+/* ------------------------------- */
+/* ------------------------------- */
+/* ------------------------------- */
+
+/* ======================== */
+/* #region abstracts/colors */
+/* ======================== */
+
+:root {
+
+    /* ------------------------------- */
+
+    /* -------------- */
+    /* #region global */
+    /* -------------- */
+
+    --_orange-vivid-050: hsl(24, 100%, 93%);
+    --_orange-vivid-100: hsl(22, 100%, 85%);
+    --_orange-vivid-200: hsl(20, 100%, 77%);
+    --_orange-vivid-300: hsl(18, 100%, 70%);
+    --_orange-vivid-400: hsl(16, 94%, 61%);
+    --_orange-vivid-500: hsl(14, 89%, 55%);
+    --_orange-vivid-600: hsl(12, 86%, 47%);
+    --_orange-vivid-700: hsl(10, 93%, 40%);
+    --_orange-vivid-800: hsl(8, 92%, 35%);
+    --_orange-vivid-900: hsl(6, 96%, 26%);
+
+    --_cool-grey-050: hsl(216, 33%, 97%);
+    --_cool-grey-100: hsl(214, 15%, 91%);
+    --_cool-grey-200: hsl(210, 15%, 82%);
+    --_cool-grey-300: hsl(211, 13%, 65%);
+    --_cool-grey-400: hsl(211, 10%, 53%);
+    --_cool-grey-500: hsl(211, 12%, 43%);
+    --_cool-grey-600: hsl(209, 14%, 37%);
+    --_cool-grey-700: hsl(209, 18%, 30%);
+    --_cool-grey-800: hsl(209, 20%, 25%);
+    --_cool-grey-900: hsl(210, 24%, 16%);
+
+    --_indigo-050: hsl(221, 68%, 93%);
+    --_indigo-100: hsl(221, 78%, 86%);
+    --_indigo-200: hsl(224, 67%, 76%);
+    --_indigo-300: hsl(225, 57%, 67%);
+    --_indigo-400: hsl(227, 50%, 59%);
+    --_indigo-500: hsl(227, 42%, 51%);
+    --_indigo-600: hsl(228, 45%, 45%);
+    --_indigo-700: hsl(230, 49%, 41%);
+    --_indigo-800: hsl(232, 51%, 36%);
+    --_indigo-900: hsl(234, 62%, 26%);
+
+    --_red-050: hsl(0, 100%, 97%);
+    --_red-100: hsl(0, 82%, 89%);
+    --_red-200: hsl(0, 77%, 78%);
+    --_red-300: hsl(0, 71%, 66%);
+    --_red-400: hsl(0, 64%, 55%);
+    --_red-500: hsl(0, 67%, 44%);
+    --_red-600: hsl(0, 72%, 38%);
+    --_red-700: hsl(0, 79%, 32%);
+    --_red-800: hsl(0, 85%, 25%);
+    --_red-900: hsl(0, 92%, 20%);
+
+    --_yellow-050: hsl(45, 100%, 96%);
+    --_yellow-100: hsl(45, 90%, 88%);
+    --_yellow-200: hsl(45, 86%, 81%);
+    --_yellow-300: hsl(43, 90%, 76%);
+    --_yellow-400: hsl(43, 89%, 70%);
+    --_yellow-500: hsl(42, 78%, 60%);
+    --_yellow-600: hsl(42, 63%, 48%);
+    --_yellow-700: hsl(43, 72%, 37%);
+    --_yellow-800: hsl(43, 77%, 27%);
+    --_yellow-900: hsl(43, 86%, 17%);
+
+    --_green-050: hsl(125, 65%, 93%);
+    --_green-100: hsl(126, 49%, 84%);
+    --_green-200: hsl(122, 42%, 75%);
+    --_green-300: hsl(123, 38%, 63%);
+    --_green-400: hsl(123, 35%, 51%);
+    --_green-500: hsl(122, 39%, 41%);
+    --_green-600: hsl(122, 47%, 35%);
+    --_green-700: hsl(125, 56%, 29%);
+    --_green-800: hsl(125, 73%, 20%);
+    --_green-900: hsl(125, 86%, 14%);
+
+    /* -------------- */
+    /* #endregion     */
+    /* -------------- */
+
+    /* ------------------------------- */
+
+    /* ------------------ */
+    /* #region contextual */
+    /* ------------------ */
+
+    --primary-050: var(--_orange-vivid-050);
+    --primary-100: var(--_orange-vivid-100);
+    --primary-200: var(--_orange-vivid-200);
+    --primary-300: var(--_orange-vivid-300);
+    --primary-400: var(--_orange-vivid-400);
+    --primary-500: var(--_orange-vivid-500);
+    --primary-600: var(--_orange-vivid-600);
+    --primary-700: var(--_orange-vivid-700);
+    --primary-800: var(--_orange-vivid-800);
+    --primary-900: var(--_orange-vivid-900);
+
+    --neutral-050: var(--_cool-grey-050);
+    --neutral-100: var(--_cool-grey-100);
+    --neutral-200: var(--_cool-grey-200);
+    --neutral-300: var(--_cool-grey-300);
+    --neutral-400: var(--_cool-grey-400);
+    --neutral-500: var(--_cool-grey-500);
+    --neutral-600: var(--_cool-grey-600);
+    --neutral-700: var(--_cool-grey-700);
+    --neutral-800: var(--_cool-grey-800);
+    --neutral-900: var(--_cool-grey-900);
+
+    --supporting-050: var(--_indigo-050);
+    --supporting-100: var(--_indigo-100);
+    --supporting-200: var(--_indigo-200);
+    --supporting-300: var(--_indigo-300);
+    --supporting-400: var(--_indigo-400);
+    --supporting-500: var(--_indigo-500);
+    --supporting-600: var(--_indigo-600);
+    --supporting-700: var(--_indigo-700);
+    --supporting-800: var(--_indigo-800);
+    --supporting-900: var(--_indigo-900);
+
+    --semantic-success-050: var(--_green-050);
+    --semantic-success-100: var(--_green-100);
+    --semantic-success-200: var(--_green-200);
+    --semantic-success-300: var(--_green-300);
+    --semantic-success-400: var(--_green-400);
+    --semantic-success-500: var(--_green-500);
+    --semantic-success-600: var(--_green-600);
+    --semantic-success-700: var(--_green-700);
+    --semantic-success-800: var(--_green-800);
+    --semantic-success-900: var(--_green-900);
+
+    --semantic-warning-050: var(--_yellow-050);
+    --semantic-warning-100: var(--_yellow-100);
+    --semantic-warning-200: var(--_yellow-200);
+    --semantic-warning-300: var(--_yellow-300);
+    --semantic-warning-400: var(--_yellow-400);
+    --semantic-warning-500: var(--_yellow-500);
+    --semantic-warning-600: var(--_yellow-600);
+    --semantic-warning-700: var(--_yellow-700);
+    --semantic-warning-800: var(--_yellow-800);
+    --semantic-warning-900: var(--_yellow-900);
+
+    --semantic-error-050: var(--_red-050);
+    --semantic-error-100: var(--_red-100);
+    --semantic-error-200: var(--_red-200);
+    --semantic-error-300: var(--_red-300);
+    --semantic-error-400: var(--_red-400);
+    --semantic-error-500: var(--_red-500);
+    --semantic-error-600: var(--_red-600);
+    --semantic-error-700: var(--_red-700);
+    --semantic-error-800: var(--_red-800);
+    --semantic-error-900: var(--_red-900);
+
+    /* ------------------ */
+    /* #endregion         */
+    /* ------------------ */
+
+    /* ------------------------------- */
+}
+
+/* ======================== */
+/* #endregion               */
+/* ======================== */
+
+/* ------------------------------- */
+/* ------------------------------- */
+/* ------------------------------- */

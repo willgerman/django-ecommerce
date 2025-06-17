@@ -1,0 +1,87 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block document_title %}
+Search | FNTN
+{% endblock %}
+
+{% block meta_description %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'pages:index' %}"
+               class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                Search
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block banner %}
+<div class="banner"
+     grid=""
+     container="main">
+    <h1 class="banner_title">Search</h1>
+    <p class="banner_description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit sit doloribus eius reiciendis quia adipisci
+        ducimus
+        cupiditate iure in nisi!
+    </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+    <div class="search_content">
+        <form action=""
+              method=""
+              class="search_form"
+              flow="vertical">
+
+            <label flex="column">
+                Enter keywords
+                <input type="text">
+            </label>
+
+            <button type="submit"
+                    class="search_form_button"
+                    flex="row"
+                    ver="primary">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+        </form>
+    </div>
+
+    {# if results exist #}
+    <ul class="listings_list"
+        grid=""
+        role="list">
+        {# for  #}
+        <li>
+            {% include 'components/_product-card.html' %}
+        </li>
+        {# endfor #}
+    </ul>
+    {# endif #}
+
+</main>
+{% endblock %}

@@ -1,0 +1,227 @@
+{% load static %}
+
+<footer id="footer"
+        class="footer">
+
+    <svg width="500"
+         height="500"
+         viewBox="0 0 500 500"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg"
+         class="footer_svg">
+        <circle cx="0.000152588"
+                cy="500"
+                r="452.545"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="-0.000274658"
+                cy="500"
+                r="407.091"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="-0.00012207"
+                cy="500"
+                r="361.636"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="6.10352e-05"
+                cy="500"
+                r="316.182"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="0.000244141"
+                cy="500"
+                r="270.727"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="-0.000228882"
+                cy="500"
+                r="225.273"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="-6.10352e-05"
+                cy="500"
+                r="179.818"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="0.00012207"
+                cy="500"
+                r="134.364"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="0.000274658"
+                cy="500"
+                r="88.9091"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cx="-0.000167847"
+                cy="500"
+                r="43.4545"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+        <circle cy="500"
+                r="498"
+                stroke="var(--footer-svg-stroke)"
+                stroke-width="2" />
+    </svg>
+
+    <div container="main"
+         class="footer_content"
+         flex="col">
+
+        <a href=""
+           class="logo footer_logo">
+            FNTN
+        </a>
+
+        <div class="footer_menus"
+             grid="">
+            <nav id="secondary-nav"
+                 class="secondary_nav"
+                 grid="">
+                {% if GlobalCategories %}
+                <div class="footer_menu"
+                     grid="">
+                    <h3 class="footer_header">Shop</h3>
+                    <ul class="footer_list"
+                        grid=""
+                        role="list">
+                        {% for Category in GlobalCategories %}
+                        <li>
+                            <a href="{% url 'products:listings' slug=Category.slug %}"
+                               class="footer_link">{{ Category.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                <div class="footer_menu"
+                     grid="">
+                    <h3 class="footer_header">Company</h3>
+                    <ul class="footer_list"
+                        grid=""
+                        role="list">
+                        <li>
+                            <a href=""
+                               class="footer_link">About Us</a>
+                        </li>
+                        <li>
+                            <a href=""
+                               class="footer_link">Contact Us</a>
+                        </li>
+
+                        <li>
+                            <a href=""
+                               class="footer_link"></a>
+                        </li>
+
+                        <li>
+                            <a href=""
+                               class="footer_link"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="footer_menu"
+                     grid="">
+                    <h3 class="footer_header">Resources</h3>
+                    <ul class="footer_list"
+                        grid=""
+                        role="list">
+                        <li>
+                            <a href=""
+                               class="footer_link">FAQs</a>
+                        </li>
+                        <li>
+                            <a href=""
+                               class="footer_link">Privacy Policy</a>
+                        </li>
+
+                        <li>
+                            <a href=""
+                               class="footer_link">Terms of Use</a>
+                        </li>
+
+                    </ul>
+                </div> -->
+            </nav>
+            <form id="contact-form"
+                  action="{% url 'support:support' %}"
+                  method="post"
+                  class="footer_form"
+                  grid="">
+
+                <h2 class="footer_header">Send Us A Message</h2>
+
+                {% csrf_token %}
+
+                <input type="hidden"
+                       name="source"
+                       value="footer">
+
+                {% if messages %}
+                <div>
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <label for="name"
+                       class=""
+                       flex="col">
+                    Name
+                    <input type="text"
+                           name="name"
+                           id="name"
+                           class=""
+                           required>
+                </label>
+
+                <label for="email"
+                       class=""
+                       flex="col">
+                    Email
+                    <input type="email"
+                           name="email"
+                           id="email"
+                           class=""
+                           required>
+                </label>
+
+                <label for="subject"
+                       class=""
+                       flex="col">
+                    Subject
+                    <input type="text"
+                           name="subject"
+                           id="subject"
+                           class=""
+                           required>
+                </label>
+
+                <label for="message"
+                       class=""
+                       flex="col">
+                    Message
+                    <textarea name="message"
+                              id="message"
+                              class=""
+                              required></textarea>
+                </label>
+
+                <button type="submit"
+                        class=""
+                        ver="primary">
+                    Send Message
+                </button>
+            </form>
+
+            <div class="footer_copyright">
+                &copy Fountain Mugs LLC 2024. All Rights Reserved.
+            </div>
+        </div>
+
+    </div>
+</footer>

@@ -1,0 +1,197 @@
+{% load static %}
+
+<header id="header"
+        class="header"
+        flex="">
+
+    <a href="#main-content"
+       class="button"
+       style="display: none">
+        Skip to Main Content
+    </a>
+
+    <div container="main"
+         flex="row">
+
+        <a href="{% url 'pages:index' %}"
+           class="logo"
+           block="">
+            FNTN
+        </a>
+
+        <a href="{% url 'cart:cart' %}"
+           class="nav_link mobile_nav_cart"
+           block="">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="nav_cart_counter"
+                  flex="justify-center">
+                {% if request.session.cart_item_count > 0 %}
+                {{ request.session.cart_item_count }}
+                {% else %}
+                0
+                {% endif %}
+            </span>
+        </a>
+
+        <button type="button"
+                class="nav_toggle"
+                aria-controls="#primary-nav"
+                ver="icon">
+            <i class="fa-solid fa-bars"></i>
+            <span visually-hidden="">Open primary navigation.</span>
+        </button>
+
+        <nav id="primary-nav"
+             class="primary_nav"
+             aria-expanded="false"
+             flex="">
+
+            <button type="button"
+                    class="nav_toggle"
+                    aria-controls="#primary-nav"
+                    ver="icon">
+                <i class="fa-solid fa-x"></i>
+                <span visually-hidden="">Close primary navigation.</span>
+            </button>
+
+            <div class="nav_menus"
+                 flex="">
+                <ul id="header-nav"
+                    class="nav_list"
+                    flex="align-center"
+                    role="list">
+
+                    {% if GlobalCategories %}
+
+                    <li class="dropdown">
+                        <button type="button"
+                                class="nav_link dropdown_toggle"
+                                ver="link"
+                                flex="row">
+                            Shop
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown_menu">
+                            <ul class="dropdown_list"
+                                grid=""
+                                role="list">
+                                {% for Category in GlobalCategories  %}
+                                <li>
+                                    <a href="{% url 'products:listings' slug=Category.slug %}"
+                                       class="dropdown_link"
+                                       flex="col">
+                                        <span>{{ Category.name }}</span>
+                                        <span>{{ Category.short_description }}</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    {% endif %}
+
+                    <li>
+                        <a href="{% url 'pages:about' %}"
+                           class="nav_link"
+                           flex="row">About</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'support:contact' %}"
+                           class="nav_link"
+                           flex="row">Contact</a>
+                    </li>
+                    <!-- <li class="dropdown">
+                        <button type="button"
+                                class="nav_link dropdown_toggle"
+                                ver="link"
+                                flex="row">
+                            More
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown_menu">
+                            <ul class="dropdown_list"
+                                grid=""
+                                role="list">
+                                <li>
+                                    <a href=""
+                                       class="dropdown_link"
+                                       flex="col">
+                                        <span>Category Name</span>
+                                        <span>Category Description</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+                </ul>
+                <ul id="header-util"
+                    class="nav_list"
+                    flex="align-center"
+                    role="list">
+                    <li>
+                        <a href="{% url 'cart:cart' %}"
+                           class="nav_link nav_cart"
+                           block="">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="nav_cart_counter"
+                                  flex="">
+                                {% if request.session.cart_item_count > 0 %}
+                                {{ request.session.cart_item_count }}
+                                {% else %}
+                                0
+                                {% endif %}
+                            </span>
+                        </a>
+                    </li>
+                    {% if not user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'accounts:login' %}"
+                           class="nav_link"
+                           block="">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'accounts:signup' %}"
+                           class="nav_link"
+                           block="">Create Account</a>
+                    </li>
+                    {% else %}
+                    <li class="dropdown">
+                        <button type="button"
+                                class="nav_link dropdown_toggle capitalize"
+                                flex="row"
+                                ver="link">
+                            <i class="fa-solid fa-user"></i>
+                            {{ user.first_name }}
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div id="util-dropdown"
+                             class="dropdown_menu">
+                            <ul class="dropdown_list"
+                                grid=""
+                                role="list">
+                                <li>
+                                    <a href="{% url 'accounts:dashboard' %}"
+                                       class="dropdown_link"
+                                       flex="col">
+                                        <span>User Dashboard</span>
+                                        <span>View and manage your account details.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'accounts:logout' %}"
+                                       class="dropdown_link"
+                                       flex="col">
+                                        <span>Logout</span>
+                                        <span>Sign out of your account.</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,72 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Create an Account | FNTN
+{% endblock %}
+
+{% block inline_css %}
+<style>
+    .form>p>label {
+        margin-bottom: var(--gap-narrow);
+    }
+
+    :where(.form>p>input, .form>p>textarea) {
+        width: 100%;
+    }
+
+    :where(.form>ul>li) {
+        padding-inline: var(--padding-inline-default);
+    }
+</style>
+{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+    <h1 class="heading">Member Sign Up</h1>
+    <p class="subheading">Create your FNTN account today!</p>
+
+    <form action=""
+          method="post"
+          class="form"
+          flex="col">
+
+        {% csrf_token %}
+
+        {% if messages %}
+        <ul class="form_errors_list"
+            grid=""
+            role="list">
+            {% for message in messages %}
+            <li class="form_errors_item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p class="form_error_message">{{ message }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <button type="submit"
+                class="">Sign Up</button>
+
+    </form>
+</main>
+
+{% endblock %}
+
+{% block inline_js %}
+<script type="text/javascript">
+
+    // dynamically apply styles to form.as_p fields
+
+    // regex validation
+
+</script>
+{% endblock %}

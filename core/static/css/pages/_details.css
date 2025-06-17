@@ -1,0 +1,136 @@
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* ===================== */
+/* #region pages/details */
+/* ===================== */
+
+.details_body {
+    --_gap: var(--gap-default);
+    grid-template-columns: minmax(0, 1fr);
+
+    padding-block: var(--padding-block-extrawide);
+    padding-inline: var(--padding-inline-default);
+}
+
+.details_gallery {
+    padding: var(--padding-block-default);
+    border: 2px solid var(--neutral-200);
+}
+
+.details_content {
+    --_gap: calc(var(--gap-default) * 2);
+}
+
+:where(.details_content > div:first-child) {
+    --_gap: var(--gap-narrow);
+}
+
+.details_name {
+    max-width: 65ch;
+    font-size: var(--font-size-static-600);
+    line-height: var(--line-height-short);
+}
+
+.details_price {
+    font-weight: var(--font-weight-bold);
+}
+
+.details_description {
+    max-width: 65ch;
+}
+
+.details_quantity {
+    padding-bottom: var(--padding-block-default);
+}
+
+:where(.details_form fieldset) {
+    border: 0;
+}
+
+:where(.details_form legend) {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--gap-narrow);
+}
+
+:where(.details_form fieldset div) {
+    --_gap: var(--gap-narrow);
+
+    --_columns: 2;
+    grid-template-columns: repeat(var(--_columns), minmax(0, 1fr));
+    position: relative;
+}
+
+.details_label {
+    --_gap: var(--gap-narrow);
+
+    width: 100%;
+
+    font-weight: var(--font-weight-regular);
+
+    padding-block: var(--padding-block-default);
+    padding-inline: var(--padding-inline-default);
+
+    border: 2px solid var(--neutral-100);
+
+    position: relative;
+}
+
+.details_select {
+    width: 100%;
+
+    background: var(--bg-default);
+
+    font-weight: var(--font-weight-regular);
+
+    padding-block: var(--padding-block-default);
+    padding-inline: var(--padding-inline-default);
+
+    border: 2px solid var(--neutral-100);
+}
+
+.details_button {}
+
+.details_actions {
+    --_gap: var(--gap-narrow);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detail_attributes {
+    display: none;
+}
+
+.details_similar {
+    display: none;
+}
+
+@media screen and (min-width: 30em) {
+    .details_body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    :where(.details_form fieldset div) {
+        --_columns: 2;
+    }
+}
+
+@media screen and (min-width: 45em) {
+    :where(.details_form fieldset div) {
+        --_columns: 3;
+    }
+}
+
+@media screen and (min-width: 65em) {
+    :where(.details_form fieldset div) {
+        --_columns: 4;
+    }
+}
+
+/* ===================== */
+/* #endregion            */
+/* ===================== */
+
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */

@@ -1,0 +1,41 @@
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* ====================== */
+/* #region pages/listings */
+/* ====================== */
+
+.listings_filters {
+    display: none;
+}
+
+.listings_list {
+    --_column-count: 2;
+    --_gap: var(--gap-extranarrow);
+
+    grid-template-columns: repeat(var(--_column-count), minmax(0, 1fr));
+    padding-inline: var(--padding-inline-default);
+    padding-bottom: var(--padding-block-default);
+}
+
+@media screen and (min-width: 35em) {
+    .listings_list {
+        --_column-count: 3;
+        --_gap: var(--gap-narrow);
+    }
+}
+
+@media screen and (min-width: 45em) {
+    .listings_list {
+        --_column-count: 4;
+    }
+}
+
+/* ====================== */
+/* #endregion             */
+/* ====================== */
+
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */

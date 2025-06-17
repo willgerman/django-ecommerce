@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="product_card"
+     grid="">
+
+     <a href="{% url 'products:details' category=prod.category.slug slug=prod.slug %}"
+        class="product_card_link"></a>
+
+     <img src="{{ prod.image.url }}"
+          alt=""
+          class="product_card_image">
+
+     <div class="product_card_text"
+          flow="vertical">
+          <h3 class="product_card_name">{{ prod.name }}</h3>
+          <p class="product_card_price">${{ prod.price }}</p>
+     </div>
+</div>

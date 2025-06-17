@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Order Success | FNTN
+{% endblock %}
+
+{% block inline_css %}
+<style>
+  .subheading {
+    max-width: 65ch;
+    text-align: center;
+  }
+
+  .payment_redirect {
+    --_gap: 0;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: var(--padding-block-extrawide);
+    padding-bottom: var(--padding-block-default);
+  }
+
+  .payment_redirect>a {
+    color: var(--primary-400);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+  <h1 class="heading">Order Success</h1>
+  <p class="subheading">
+    Your order was received and your items will be shipped soon. Thank you for your business!
+  </p>
+
+  <!-- <p>
+    <strong>Total:</strong>
+    <span>$</span>
+  </p> -->
+
+  <div class="payment_redirect"
+       flex="">
+    <a href="{% url 'pages:index' %}">Continue Shopping</a>
+  </div>
+
+</main>
+{% endblock %}

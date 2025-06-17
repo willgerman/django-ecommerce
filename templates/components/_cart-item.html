@@ -1,0 +1,75 @@
+{% load static %}
+
+<div class="cart_item"
+     grid="">
+
+    <img src="{{ item.image }}"
+         alt=""
+         class="cart_item_image">
+
+    <div class="cart_item_details"
+         flex="col">
+        <h3 class="cart_item_name">
+            <a
+               href="{% url 'products:details' category=item.product_object.category.slug slug=item.product_object.slug %}">
+                {{ item.name }}
+            </a>
+        </h3>
+        <p class="cart_item_price">${{ item.line_total }}</p>
+    </div>
+
+    <form action="{% url 'cart:update-quantity' %}"
+          method="post"
+          class="cart_quantity_form"
+          flex="">
+
+        {% csrf_token %}
+
+        <input type="hidden"
+               name="cart_item_id"
+               value="{{ item.id }}">
+
+        <button type="submit"
+                class="cart_quantity_input cart_quantity_button"
+                name="action"
+                value="decrement">
+            <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <input type="text"
+               class="cart_quantity_input"
+               name="cart_item_quantity"
+               value="{{ item.quantity }}"
+               tabindex="-1"
+               readonly>
+
+        <button type="submit"
+                class="cart_quantity_input cart_quantity_button"
+                name="action"
+                value="increment">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </form>
+
+    <form action="{% url 'cart:delete' %}"
+          method="post"
+          class="cart_delete_form">
+
+        {% csrf_token %}
+
+        <input type="hidden"
+               name="cart_item_id"
+               value="{{ item.id }}">
+
+        <button type="submit"
+                class="cart_button_delete"
+                name="action"
+                value="delete">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+    </form>
+
+    <div>
+
+    </div>
+</div>

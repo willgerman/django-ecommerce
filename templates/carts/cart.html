@@ -1,0 +1,190 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Cart | FNTN
+{% endblock %}
+
+{% block meta_description %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'pages:index' %}"
+               class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                Cart
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block head_tags %}
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{% static 'js/payments.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<main id="main-content"
+      container="main">
+
+    <section class="cart_section cart_header">
+        <h1>Your Cart</h1>
+    </section>
+
+    <section class="cart_section cart_body"
+             grid="">
+
+        {% if cart_items %}
+        <ul class="cart_list"
+            role="list">
+
+            {% for cart_item in cart_items %}
+            <li>
+                {% include 'components/_cart-item.html' with item=cart_item %}
+            </li>
+            {% endfor %}
+
+        </ul>
+        {% else %}
+        <p grid="items-center">
+            Your Cart is Empty
+        </p>
+        {% endif %}
+
+    </section>
+
+    {% if cart_items %}
+    {% if user.is_authenticated %}
+    <section class="cart_section cart_discounts">
+        {% if not cart.coupon %}
+        <form action="{% url 'cart:coupon' %}"
+              method="post"
+              class="form"
+              flow="vertical">
+
+            {% csrf_token %}
+
+            <label flex="col">
+                Coupon Code
+                <input type="text"
+                       id="coupon_code"
+                       name="coupon_code"
+                       class="uppercase"
+                       maxlength="6">
+            </label>
+            <button id="checkout_button"
+                    type="submit"
+                    class=""
+                    ver="secondary">
+                Apply Coupon
+            </button>
+        </form>
+        {% else %}
+        <div class="form">
+            <label flex="col">
+                Applied Coupon
+                <input type="text"
+                       id="coupon_code"
+                       name="coupon_code"
+                       value="{{ cart.coupon.code }}"
+                       class="uppercase"
+                       maxlength="6"
+                       readonly>
+            </label>
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
+    {% endif %}
+
+    {% if cart_items %}
+    <section class="cart_section cart_footer">
+        {# if user.is_authenticated #}
+        <div class="cart_details">
+            <p class="cart_detail_item"
+               flex="row">
+                <span>Subtotal ({{ cart.count }} item{{ cart.count | pluralize }}):</span>
+                <span>${{ cart.subtotal }}</span>
+            </p>
+            {% if cart.coupon %}
+            <p class="cart_detail_item"
+               flex="row">
+                <span>Discount ({{ cart.coupon.discount }}% off):</span>
+                <span>${{ cart.discount_value }}</span>
+            </p>
+            {% endif %}
+            <p class="cart_detail_item"
+               flex="row">
+                <span>Shipping (Flat Rate):</span>
+                <span>${{ cart.shipping_fee }}</span>
+            </p>
+            <p class="cart_detail_item"
+               flex="row">
+                <span>Total ({{ cart.count }} item{{ cart.count | pluralize }}):</span>
+                <span>${{ cart.total }}</span>
+            </p>
+        </div>
+
+        <form action="{% url 'create-checkout-session' %}"
+              method="post"
+              class="form">
+
+            {% csrf_token %}
+
+            <button id="checkout_button"
+                    type="submit"
+                    class="">
+                Proceed to Checkout
+            </button>
+
+        </form>
+        {# elif #}
+        <!--
+            Activate / Deactivate Dialog
+        -->
+        <div class="form"
+             style="display: none">
+            <button type="button"
+                    class="form_button">
+                Proceed to Checkout
+            </button>
+        </div>
+        {# endif #}
+    </section>
+    {% endif %}
+
+    {# if cart_items #}
+    {# if not user.is_authenticated #}
+    <dialog class="cart_dialog"
+            style="display: none">
+
+        <!--
+            Sign up for Member Benefits
+        -->
+
+    </dialog>
+    {# endif #}
+    {# endif #}
+
+</main>
+
+{% endblock %}
+
+{% block inline_js %}
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Listings | FNTN
+{% endblock %}
+
+{% block meta_description %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'pages:index' %}"
+               class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                {{ category.name }}
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block banner %}
+<div class="banner"
+     grid=""
+     container="main">
+    <h1 class="banner_title">{{ category.name }}</h1>
+    <p class="banner_description">
+        {{ category.description | linebreaks }}
+    </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<aside id="filters"
+       class="listings_filters">
+    <h2>Filters</h2>
+    <form action=""
+          method=""
+          class="">
+
+        <fieldset>
+            <legend>Attribute Name</legend>
+            <div>
+                {# for each attribute in attriutes #}
+                <label for="">
+                    <input type="radio">
+                </label>
+                {# endfor #}
+            </div>
+        </fieldset>
+
+    </form>
+</aside>
+
+<main id="main-content"
+      container="main">
+
+    {% if products %}
+    <ul class="listings_list"
+        grid=""
+        role="list">
+        {% for product in products %}
+        <li>
+            {% include 'components/_product-card.html' with prod=product cat=category %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h2>No Products Found</h2>
+    {% endif %}
+
+</main>
+
+{% endblock %}

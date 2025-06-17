@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Order Cancelled | FNTN
+{% endblock %}
+
+{% block inline_css %}
+<style>
+  .payment_redirect {
+    --_gap: 0;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: var(--padding-block-extrawide);
+    padding-bottom: var(--padding-block-default);
+  }
+
+  .subheading>a,
+  .payment_redirect>a {
+    color: var(--primary-400);
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+  <h1 class="heading">Order Cancelled</h1>
+  <p class="subheading">If this action was not intentional, please <a href="{% url 'support:contact' %}">contact us</a>
+    for support.</p>
+
+  <div class="payment_redirect"
+       flex="">
+    <a href="{% url 'cart:cart' %}"
+       class="">Return to Cart</a>
+  </div>
+
+</main>
+{% endblock %}

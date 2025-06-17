@@ -1,0 +1,50 @@
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+
+/* ======================== */
+/* #region components/forms */
+/* ======================== */
+
+.form {
+    --_bg: var(--form-field-bg-default);
+    --_text: var(--form-field-text-default);
+    --_border: var(--form-field-border-default);
+
+    --_gap: var(--form-gap);
+
+    width: var(--form-width);
+    max-width: var(--form-max-width);
+
+    padding-block: var(--form-padding-block);
+
+    margin-inline: var(--form-margin-inline);
+}
+
+.form-inverse {
+    --_bg: var(--form-field-bg-inverse);
+    --_text: var(--form-field-text-inverse);
+}
+
+:where(.form > label, .form > label > input) {
+    background: var(--_bg);
+    color: var(--_text);
+}
+
+:where(.form > label > input, .form > label > textarea) {
+    border: var(--_border);
+}
+
+:where(.form > button[type="submit"], .form > .form_button) {
+    width: var(--form-button-width);
+    padding-block: var(--form-button-padding-block);
+    padding-inline: var(--form-button-padding-inline);
+}
+
+/* ======================== */
+/* #endregion               */
+/* ======================== */
+
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */

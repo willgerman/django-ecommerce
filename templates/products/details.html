@@ -1,0 +1,173 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+Details | FNTN
+{% endblock %}
+
+{% block meta_description %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'pages:index' %}"
+               class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'products:listings' slug=product.category.slug %}"
+               class="breadcrumb_link">
+                {{ product.category.name }}
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                {{ product.name }}
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<main id=""
+      container="main">
+
+    <div class="details_body"
+         grid="">
+        <div class="details_gallery">
+            <img src="{{ product.image.url }}"
+                 alt=""
+                 class="details_gallery_main">
+            <ul class="details_gallery_slider"
+                role="list">
+                <li>
+                    <img src=""
+                         alt=""
+                         class="details_gallery_slider_item">
+                </li>
+            </ul>
+        </div>
+
+        <div class="details_content"
+             flex="col">
+            <div flex="col">
+                <h1 class="details_name">{{ product.name }}</h1>
+                <p class="details_price">${{ product.price }}</p>
+            </div>
+
+            <p class="details_description">
+                {{ product.description | linebreaks }}
+            </p>
+
+            <form action="{% url 'cart:update' %}"
+                  method="post"
+                  class="details_form"
+                  flow="vertical">
+
+                {% csrf_token %}
+
+                <input type="hidden"
+                       name="product_id"
+                       value="{{ product.id }}">
+
+                <input type="hidden"
+                       name="next_url"
+                       value="{{ request.path }}">
+
+                {% if false %}
+                <fieldset>
+                    <legend>Legend</legend>
+                    <div grid="">
+                        <label class="details_label"
+                               flex="row">
+                            <input type="radio"
+                                   class="details_input">
+                            Label
+                        </label>
+                    </div>
+                </fieldset>
+                {% endif %}
+
+                <fieldset class="details_quantity">
+                    <legend>Quantity</legend>
+                    <div grid="">
+                        <select name="product_quantity"
+                                class="details_select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="details_actions"
+                     grid="">
+                    {# if out_of_stock #}
+                    <!-- <button id="out-of-stock"
+                            type="submit"
+                            class="details_button"
+                            name="action"
+                            value="out_of_stock"
+                            ver="primary"
+                            disabled="true">
+                        Out of Stock
+                    </button> -->
+                    {# else #}
+                    <button id="buy-now"
+                            type="submit"
+                            class="details_button"
+                            name="user_action"
+                            value="buy_now"
+                            ver="primary">
+                        Buy Now
+                    </button>
+
+                    <button id="add-to-cart"
+                            type="submit"
+                            class="details_button"
+                            name="user_action"
+                            value="add_to_cart"
+                            ver="secondary">
+                        Add to Cart
+                    </button>
+                    {# endif #}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="details_attributes">
+        <!--
+            Attributes
+        -->
+    </div>
+
+</main>
+
+<section>
+    <!-- Similar Products -->
+    <ul class="details_similar"
+        role="list"></ul>
+</section>
+
+{% endblock %}

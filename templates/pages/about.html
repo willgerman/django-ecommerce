@@ -1,0 +1,79 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block document_title %}
+About | FNTN
+{% endblock %}
+
+{% block meta_description %}
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumbs">
+    <ul class="breadcrumb_list"
+        flex="row"
+        role="list">
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a href="{% url 'pages:index' %}"
+               class="breadcrumb_link">
+                Home
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+        <li class="breadcrumb_item"
+            flex="row items-center">
+            <a class="breadcrumb_link">
+                About
+            </a>
+            <i class="breadcrumb_icon fa-solid fa-angle-right"></i>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block banner %}
+<div class="banner"
+     grid=""
+     container="main">
+    <h1 class="banner_title">About FNTN</h1>
+    <p class="banner_description">
+        Learn about our business, our mission, and why we created Fountain Mugs!
+    </p>
+</div>
+{% endblock %}
+
+{% block content %}
+<main id="main-content"
+      container="main">
+
+    <div class="about_content"
+         flow="vertical"
+         style="text-align: justify">
+        <h2>Our Mission</h2>
+        <p>
+            Welcome to Fountain Mugs, your one-stop shop for high-quality and stylish mugs and drinkware. Whether you're
+            a coffee enthusiast, tea lover, or an outdoor adventurer, we have the perfect product to elevate your
+            drinking experience. Our collection includes everything from classic ceramic mugs and vintage enamel designs
+            to innovative camping cups and insulated water bottles. We pride ourselves on offering a diverse range of
+            products, each crafted with durability and aesthetics in mind, ensuring that every sip is as satisfying as
+            the first. At Fountain Mugs, we believe your drinkware should complement your lifestyle, whether you're
+            relaxing at home, hiking through nature, or working on the go.
+        </p>
+
+        <p>
+            Our mission is to combine functionality, design, and sustainability in every product we offer. From
+            minimalist
+            mugs for the modern home to personalized options that make thoughtful gifts, we cater to all tastes and
+            needs.
+            We also offer durable outdoor-friendly options, like foldable camping cups and insulated travel mugs,
+            designed
+            to withstand the demands of adventure. At Fountain Mugs, we strive to deliver exceptional value and quality
+            while maintaining a commitment to customer satisfaction. Explore our collection today and find the perfect
+            mug
+            to accompany your next coffee break, tea time, or outdoor escapade!
+        </p>
+    </div>
+
+</main>
+{% endblock %}
