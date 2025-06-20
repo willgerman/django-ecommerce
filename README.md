@@ -3,6 +3,9 @@
 
 A digital storefront designed and developed for the Bridgewater College CSCI-400 Software Engineering course. The above company is fictional and any references or relation to existing businesses, places, people, entities, or objects is entirely coincidental and should not be considered an endorsement or imply any relationship between parties.
 
+## Images
+
+- Add images via html to showcase the application's UI.
 
 ## Authors
 
