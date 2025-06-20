@@ -6,7 +6,7 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 ## Authors
 
-- Will German ([@will-german](https://github.com/will-german))
+- Will German ([@willgerman](https://github.com/willgerman))
 - Daniel Shulgan ([@danielshulgan](https://github.com/danielshulgan))
 - Chris Arnold ([@Carno2](https://github.com/Carno2))
 - Jimmy Rosend ([@Jimbob432](https://github.com/Jimbob432))
