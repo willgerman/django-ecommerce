@@ -19,8 +19,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING, blank=True, null=True)
     sku = models.CharField(max_length=100, unique=True)
     is_published = models.BooleanField(default=False)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    date_updated = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

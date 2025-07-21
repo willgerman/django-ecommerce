@@ -1,0 +1,263 @@
+[
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Classic Ceramic Mug",
+            "description": "A sturdy ceramic mug with a modern, neutral color design.",
+            "price": "12.99",
+            "stock": "100",
+            "image": "products/classic_ceramic_mug.png",
+            "sku": "8391024756",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Enamel Camping Mug",
+            "description": "Durable enamel mug perfect for outdoor adventures.",
+            "price": "9.99",
+            "stock": "100",
+            "image": "products/enamel_camping_mug.png",
+            "sku": "7401938562",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Large Capacity Mug",
+            "slug": "large-capacity-mug",
+            "description": "A large ceramic mug for the ultimate coffee lover.",
+            "price": "14.99",
+            "stock": "100",
+            "image": "products/large_capacity_mug.png",
+            "sku": "6284719305",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Personalized Name Mug",
+            "description": "A ceramic mug with personalized name text.",
+            "price": "16.99",
+            "stock": "100",
+            "image": "products/personalized_name_mug.png",
+            "sku": "9157302486",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Insulated Camping Cup",
+            "description": "A double-walled stainless steel camping cup for hot and cold drinks.",
+            "price": "15.99",
+            "stock": "100",
+            "image": "products/insulated_camping_cup.png",
+            "sku": "3705928164",
+            "is_published": "True",
+            "category": 2
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Foldable Camping Cup",
+            "description": "Lightweight, foldable camping cup for easy transport.",
+            "price": "8.99",
+            "stock": "100",
+            "image": "products/foldable_camping_cup.png",
+            "sku": "5829130476",
+            "is_published": "True",
+            "category": 2
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Silicone Camping Mug",
+            "description": "Flexible silicone camping mug, perfect for rugged outdoor use.",
+            "price": "11.99",
+            "stock": "100",
+            "image": "products/silicone_camping_mug.png",
+            "sku": "1468209375",
+            "is_published": "True",
+            "category": 2
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Stackable Camping Cups",
+            "description": "Set of stackable stainless steel cups for easy camping storage.",
+            "price": "17.99",
+            "stock": "100",
+            "image": "products/stackable_camping_cups.png",
+            "sku": "2937481056",
+            "is_published": "True",
+            "category": 2
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Stainless Sports Bottle",
+            "description": "A sleek stainless steel sports bottle with a secure lid.",
+            "price": "18.99",
+            "stock": "100",
+            "image": "products/stainless_sports_bottle.png",
+            "sku": "1049582736",
+            "is_published": "True",
+            "category": 3
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Wide Mouth Bottle",
+            "description": "Sports bottle with a wide mouth for easy filling and cleaning.",
+            "price": "14.99",
+            "stock": "100",
+            "image": "products/wide_mouth_bottle.png",
+            "sku": "8694732105",
+            "is_published": "True",
+            "category": 3
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Insulated Water Bottle",
+            "description": "A Blue double-wall insulated bottle to keep drinks cold for hours.",
+            "price": "19.99",
+            "stock": "100",
+            "image": "products/insulated_water_bottle.png",
+            "sku": "7512039684",
+            "is_published": "True",
+            "category": 3
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Flip-Top Sports Bottle",
+            "description": "Striped convenient sports bottle with flip-top lid for one-handed use.",
+            "price": "16.99",
+            "stock": "100",
+            "image": "products/flip_top_sports_bottle.png",
+            "sku": "3081745926",
+            "is_published": "True",
+            "category": 3
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Vintage Enamel Mug",
+            "description": "Classic enamel mug with a nostalgic camping design.",
+            "price": "10.99",
+            "stock": "100",
+            "image": "products/vintage_enamel_mug.png",
+            "sku": "4920673815",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Minimalist Ceramic Mug",
+            "description": "A sleek, minimalist ceramic mug with a modern design.",
+            "price": "13.99",
+            "stock": "100",
+            "image": "products/minimalist_ceramic_mug.png",
+            "sku": "6271830945",
+            "is_published": "True",
+            "category": 1
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Glass Tea Cup",
+            "description": "A transparent glass cup ideal for enjoying tea.",
+            "price": "9.99",
+            "stock": "100",
+            "image": "products/glass_tea_cup.png",
+            "sku": "1803924756",
+            "is_published": "True",
+            "category": 4
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Porcelain Tea Set",
+            "description": "Elegant porcelain tea set with matching saucers.",
+            "price": "29.99",
+            "stock": "100",
+            "image": "products/porcelain_tea_set.png",
+            "sku": "3592718046",
+            "is_published": "True",
+            "category": 4
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Insulated Travel Mug",
+            "description": "Vacuum-insulated small mug to keep tea warm on the go.",
+            "price": "19.99",
+            "stock": "100",
+            "image": "products/insulated_travel_mug.png",
+            "sku": "8147092356",
+            "is_published": "True",
+            "category": 4
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Ceramic Tea Infuser Mug",
+            "description": "A ceramic tea mug with built-in infuser for loose leaf tea.",
+            "price": "15.99",
+            "stock": "100",
+            "image": "products/ceramic_tea_infuser_mug.png",
+            "sku": "9063821475",
+            "is_published": "True",
+            "category": 4
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Ceramic Espresso Cup",
+            "description": "A small, stylish cup perfect for a shot of espresso.",
+            "price": "6.99",
+            "stock": "100",
+            "image": "products/ceramic_espresso_cup.png",
+            "sku": "2314789605",
+            "is_published": "True",
+            "category": 5
+        }
+    },
+    {
+        "model": "products.Product",
+        "fields": {
+            "name": "Double-Wall Glass Espresso Cup",
+            "description": "Double-wall glass cup to keep espresso warm.",
+            "price": "8.99",
+            "stock": "100",
+            "image": "products/double_wall_glass_espresso_cup.png",
+            "sku": "5471803296",
+            "is_published": "True",
+            "category": 5
+        }
+    }
+]

@@ -1,0 +1,57 @@
+[
+    {
+        "model": "organization.Category",
+        "pk": 1,
+        "fields": {
+            "name": "Mugs",
+            "slug": "mugs",
+            "thumbnail": "categories/mugs_category.png",
+            "short_description": "Sip in style with our curated selection of mugs.",
+            "description": "Sip in style with our curated selection of mugs! Whether you're enjoying your morning coffee, cozying up with tea, or indulging in a hot chocolate, our diverse range of mugs adds personality and flair to your beverage experience."
+        }
+    },
+    {
+        "model": "organization.Category",
+        "pk": 2,
+        "fields": {
+            "name": "Camping Cups",
+            "slug": "camping-cups",
+            "thumbnail": "categories/camping_cups_category.png",
+            "short_description": "Gear up for your next adventure with our durable and stylish camping cups.",
+            "description": "Gear up for your next adventure with our durable and stylish camping cups! Designed for the great outdoors, these rugged mugs are perfect for enjoying your favorite beverages by the campfire, at the trailhead, or while exploring the wilderness."
+        }
+    },
+    {
+        "model": "organization.Category",
+        "pk": 3,
+        "fields": {
+            "name": "Sports Bottles",
+            "slug": "sports-bottles",
+            "thumbnail": "categories/sports_bottles_category.png",
+            "short_description": "Stay refreshed and hydrated on the go with our premium collection of sports bottles.",
+            "description": "Stay refreshed and hydrated on the go with our premium collection of sports bottles! Whether you're hitting the gym, running trails, or tackling a tough workout, our selection of durable, leak-proof bottles is designed to keep your drinks cool and fresh."
+        }
+    },
+    {
+        "model": "organization.Category",
+        "pk": 4,
+        "fields": {
+            "name": "Tea Cups",
+            "slug": "tea-cups",
+            "thumbnail": "categories/tea_cups_category.png",
+            "short_description": "Immerse yourself into the art of tea with our exquisite collection of tea cups and sets.",
+            "description": "Immerse yourself in the art of tea with our exquisite collection of tea cups and teacup sets. Whether you're savoring a delicate green tea, robust black tea, or a calming herbal blend, our tea cups are designed to enhance every sip."
+        }
+    },
+    {
+        "model": "organization.Category",
+        "pk": 5,
+        "fields": {
+            "name": "Espresso Cups",
+            "slug": "espresso-cups",
+            "thumbnail": "categories/espresso_cups_category.png",
+            "short_description": "Experience the perfect shot of espresso with our carefully curated selection of espresso cups.",
+            "description": "Experience the perfect shot of espresso with our carefully curated selection of espresso cups. Designed for lovers of bold, concentrated coffee, these small yet stylish cups are the ideal size to showcase the rich aroma and crema of your espresso."
+        }
+    }
+]
