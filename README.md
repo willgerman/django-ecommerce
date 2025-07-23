@@ -34,6 +34,12 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 <br/>
 
+## Prerequisites
+
+- [Python 3.13 or later](https://www.python.org/downloads/)
+
+<br/>
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file.
@@ -51,6 +57,13 @@ To run this project, you will need to add the following environment variables to
 <br/>
 
 ## Run Locally
+
+All instructions below are written for MacOS/Unix systems. If you are on a different environment you must use the equivalent commands. 
+
+#### Clone the repository
+```
+git clone 
+```
 
 
 <br/>

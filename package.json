@@ -1,0 +1,29 @@
+{
+  "name": "django-ecommerce",
+  "description": "An eCommerce platform leveraging Django, Stripe, and SendGrid to deliver a complete experience.",
+  "version": "1.0.0",
+  "license": "MIT License (https://choosealicense.com/licenses/mit/)",
+  "authors": [
+    "Will German (@willgerman)",
+    "Daniel Shulgan (@danielshulgan)",
+    "Chris Arnold (@Carno2)",
+    "Jimmy Rosend (@Jimbob432)",
+    "Cole Miller (@colemiller12)",
+    "Eli Coleman (@EliC23)"
+  ],
+  "scripts": {
+    "build:sass": "sass --no-source-map core/static/sass:core/static/css",
+    "build:css": "postcss core/static/css/*.css --no-map --replace",
+    "build": "npm-run-all build:*",
+    "watch:sass": "sass --watch core/static/sass:core/static/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "dev": "npm-run-all watch"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.89.2"
+  }
+}

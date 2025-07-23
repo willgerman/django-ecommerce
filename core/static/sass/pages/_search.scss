@@ -1,0 +1,29 @@
+.search_content {
+    padding-bottom: var(--padding-block-extrawide);
+}
+
+.search_form {
+    max-width: 100%;
+
+    padding-inline: var(--padding-inline-default);
+}
+
+:where(.search_form > label) {
+    --_gap: var(--gap-default);
+}
+
+.search_form_button {
+    width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+    .search_form {
+        max-width: 65%;
+    }
+}
+
+@media screen and (min-width: 65em) {
+    .search_form {
+        max-width: 50%;
+    }
+}
