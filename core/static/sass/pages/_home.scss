@@ -82,10 +82,12 @@
 
 .home_banner {
     width: 100%;
+    height: 100%;
     max-height: 32rem;
-    aspect-ratio: 16 / 9;
 
     align-content: center;
+
+    padding-block: var(--banner-padding-block);
 
     position: relative;
     overflow: hidden;
@@ -102,6 +104,11 @@
     z-index: -1;
 }
 
+.home_banner > div:first-child {
+    width: 100%;
+    max-width: 100%;
+}
+
 .home_banner_company {
     color: var(--text-inverse);
     padding-inline: var(--padding-inline-wide);
@@ -109,10 +116,10 @@
 }
 
 .home_banner_heading {
-    width: 25ch;
+    max-width: 25ch;
 
     color: var(--text-inverse);
-    font-size: calc(var(--font-size-heading) * 1.5);
+    font-size: var(--font-size-heading);
     font-weight: var(--font-weight-bold);
     padding-inline: var(--padding-inline-wide);
 
@@ -122,7 +129,7 @@
 }
 
 .home_banner_subheading {
-    width: 65ch;
+    max-width: 65ch;
 
     color: var(--text-inverse);
     padding-block: var(--padding-block-default);
@@ -130,7 +137,7 @@
 }
 
 .home_banner_link {
-    width: max-content;
+    max-width: max-content;
 
     background: var(--primary-400);
     color: var(--text-inverse);
@@ -152,6 +159,7 @@
     left: 0;
 
     width: 100%;
+    height: 100%;
 
     object-fit: cover;
     object-position: center;
@@ -169,4 +177,14 @@
     font-size: var(--font-size-small);
 
     opacity: 0.35;
+}
+
+@media screen and (min-width: 45em) {
+    .home_banner {
+        aspect-ratio: 16 / 9;
+    }
+
+    .home_banner_heading {
+        font-size: calc(var(--font-size-heading) * 1.5);
+    }
 }

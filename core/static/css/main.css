@@ -824,7 +824,6 @@
 
 .banner_description + p {
   max-width: var(--banner-description-max-width);
-  text-align: justify;
 }
 
 .product_card {
@@ -1038,9 +1037,10 @@
 }
 .home_banner {
   width: 100%;
+  height: 100%;
   max-height: 32rem;
-  aspect-ratio: 16/9;
   align-content: center;
+  padding-block: var(--banner-padding-block);
   position: relative;
   overflow: hidden;
 }
@@ -1056,6 +1056,11 @@
   z-index: -1;
 }
 
+.home_banner > div:first-child {
+  width: 100%;
+  max-width: 100%;
+}
+
 .home_banner_company {
   color: var(--text-inverse);
   padding-inline: var(--padding-inline-wide);
@@ -1063,9 +1068,9 @@
 }
 
 .home_banner_heading {
-  width: 25ch;
+  max-width: 25ch;
   color: var(--text-inverse);
-  font-size: calc(var(--font-size-heading) * 1.5);
+  font-size: var(--font-size-heading);
   font-weight: var(--font-weight-bold);
   padding-inline: var(--padding-inline-wide);
   line-height: var(--line-height-short);
@@ -1073,14 +1078,14 @@
 }
 
 .home_banner_subheading {
-  width: 65ch;
+  max-width: 65ch;
   color: var(--text-inverse);
   padding-block: var(--padding-block-default);
   padding-inline: var(--padding-inline-wide);
 }
 
 .home_banner_link {
-  width: max-content;
+  max-width: max-content;
   background: var(--primary-400);
   color: var(--text-inverse);
   padding-block: var(--padding-block-default);
@@ -1096,6 +1101,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   z-index: -1;
@@ -1110,6 +1116,14 @@
   opacity: 0.35;
 }
 
+@media screen and (min-width: 45em) {
+  .home_banner {
+    aspect-ratio: 16/9;
+  }
+  .home_banner_heading {
+    font-size: calc(var(--font-size-heading) * 1.5);
+  }
+}
 .cart_section {
   padding-block: var(--padding-block-default);
   padding-inline: var(--padding-inline-default);
@@ -1264,15 +1278,13 @@
   display: none;
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
   .details_body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   :where(.details_form fieldset div) {
     --_columns: 2;
   }
-}
-@media screen and (min-width: 45em) {
   :where(.details_form fieldset div) {
     --_columns: 3;
   }
@@ -1323,126 +1335,126 @@
   font-family: "Anton";
   font-style: normal;
   font-weight: 400;
-  src: url("../../assets/fonts/anton-v25-latin-regular.woff2") format("woff2");
+  src: url("../assets/fonts/anton-v25-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Protest Strike";
   font-style: normal;
   font-weight: 400;
-  src: url("../../assets/fonts/protest-strike-v2-latin-regular.woff2") format("woff2");
+  src: url("../assets/fonts/protest-strike-v2-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 200;
-  src: url("../../assets/fonts/noto-sans-v36-latin-200.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-200.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: italic;
   font-weight: 200;
-  src: url("../../assets/fonts/noto-sans-v36-latin-200italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-200italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../../assets/fonts/noto-sans-v36-latin-regular.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: italic;
   font-weight: 400;
-  src: url("../../assets/fonts/noto-sans-v36-latin-italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../../assets/fonts/noto-sans-v36-latin-700.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-700.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: italic;
   font-weight: 700;
-  src: url("../../assets/fonts/noto-sans-v36-latin-700italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-700italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 900;
-  src: url("../../assets/fonts/noto-sans-v36-latin-900.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-900.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Sans";
   font-style: italic;
   font-weight: 900;
-  src: url("../../assets/fonts/noto-sans-v36-latin-900italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-sans-v36-latin-900italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: normal;
   font-weight: 200;
-  src: url("../../assets/fonts/noto-serif-v23-latin-200.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-200.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: italic;
   font-weight: 200;
-  src: url("../../assets/fonts/noto-serif-v23-latin-200italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-200italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: normal;
   font-weight: 400;
-  src: url("../../assets/fonts/noto-serif-v23-latin-regular.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: italic;
   font-weight: 400;
-  src: url("../../assets/fonts/noto-serif-v23-latin-italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: normal;
   font-weight: 700;
-  src: url("../../assets/fonts/noto-serif-v23-latin-700.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-700.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: italic;
   font-weight: 700;
-  src: url("../../assets/fonts/noto-serif-v23-latin-700italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-700italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: normal;
   font-weight: 900;
-  src: url("../../assets/fonts/noto-serif-v23-latin-900.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-900.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Noto Serif";
   font-style: italic;
   font-weight: 900;
-  src: url("../../assets/fonts/noto-serif-v23-latin-900italic.woff2") format("woff2");
+  src: url("../assets/fonts/noto-serif-v23-latin-900italic.woff2") format("woff2");
 }
 /*!
  * Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com

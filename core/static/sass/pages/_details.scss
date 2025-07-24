@@ -95,7 +95,7 @@
     display: none;
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 45em) {
     .details_body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -103,9 +103,7 @@
     :where(.details_form fieldset div) {
         --_columns: 2;
     }
-}
 
-@media screen and (min-width: 45em) {
     :where(.details_form fieldset div) {
         --_columns: 3;
     }
