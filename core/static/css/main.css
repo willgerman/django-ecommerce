@@ -1056,11 +1056,6 @@
   z-index: -1;
 }
 
-.home_banner > div:first-child {
-  width: 100%;
-  max-width: 100%;
-}
-
 .home_banner_company {
   color: var(--text-inverse);
   padding-inline: var(--padding-inline-wide);
