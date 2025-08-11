@@ -28,12 +28,6 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 <br/>
 
-## Showcase
-
-- Coming Soon
-
-<br/>
-
 ## Prerequisites
 
 - [Node v24.4.1 or later](https://nodejs.org/en)
