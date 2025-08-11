@@ -6,12 +6,6 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 <br/>
 
-## Showcase
-
-- Coming Soon.
-
-<br/>
-
 ## Authors
 
 - Will German ([@willgerman](https://github.com/willgerman))
@@ -34,9 +28,16 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 <br/>
 
+## Showcase
+
+- Coming Soon
+
+<br/>
+
 ## Prerequisites
 
-- [Python 3.13 or later](https://www.python.org/downloads/)
+- [Node v24.4.1 or later](https://nodejs.org/en)
+- [Python v3.13 or later](https://www.python.org/downloads/)
 
 <br/>
 
@@ -58,13 +59,74 @@ To run this project, you will need to add the following environment variables to
 
 ## Run Locally
 
-All instructions below are written for MacOS/Unix systems. If you are on a different environment you must use the equivalent commands. 
+All instructions below are written for MacOS/Unix systems. If you are on a different system you must use the equivalent commands. 
 
 #### Clone the repository
 ```
-git clone 
+git clone git@github.com:willgerman/django-ecommerce.git
+cd django-ecommerce
 ```
 
+#### Create and activate a virtual environment
+```
+python3 -m venv ./venv
+source venv/bin/activate
+```
+
+#### Install dependencies
+
+Run both of the following commands to install all dependencies. Make sure your virtual environment is activate prior to running the first command.
+
+```
+pip install -r requirements.txt
+npm install
+```
+
+#### Make migrations & migrate
+
+This will create all necessary migrations/tables for your sqlite3 database.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+#### Generate & collect static files
+
+The following command will generate the main.css file that Django will serve to the browser.
+
+```
+npm run build
+```
+
+Collect static files.
+
+```
+python manage.py collectstatic
+```
+
+#### Load fixtures
+
+These fixtures will populate your database with relevant data.
+
+```
+python manage.py loaddata initial_categories.json
+python manage.py loaddata initial_products.json
+```
+
+#### Create a superuser
+
+Follow the prompts in the terminal to complete this process.
+
+```
+python manage.py createsuperuser
+```
+
+#### Start the server
+
+```
+python manage.py runserver
+```
 
 <br/>
 
