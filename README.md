@@ -17,6 +17,13 @@ A digital storefront designed and developed for the Bridgewater College CSCI-400
 
 <br/>
 
+## Documentation
+
+- [Software Requirements Specification](https://docs.google.com/document/d/1Y9zeg7KopGoxQXOgQTb3reeJOS052xRe/edit?usp=sharing&ouid=107580630610047632619&rtpof=true&sd=true)
+- [Software Architecture & Design](https://docs.google.com/document/d/1YL2a3KHXLdNeUC9i45q4JprKCECq9Hf31wlu3aDmVtk/edit?usp=sharing)
+
+<br/>
+
 ## Features
 
 - Responsive User Interface
